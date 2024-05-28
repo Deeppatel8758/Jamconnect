@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <script src="https://api.mqcdn.com/sdk/place-search-js/v1.0.0/place-search.js"></script>
+<link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/place-search-js/v1.0.0/place-search.css"/>
+    <!-- <script type="text/javascript">
+
+      
+// map.on('click', onMapClick);
+    </script> -->
+
+    <script>
+      function search(){
+        placeSearch({
+  key: 'I4nu7wwD1HNdxPXcOxy3MkftSTnZX0l',
+  container: document.querySelector('#search-input'),
+          useDeviceLocation: true,
+          collection: [
+            'poi',
+            'airport',
+            'address',
+            'adminArea',
+          ]
+});
+
+      }
+
+    </script>
+  </head>
+
+  <body style="border: 0; margin: 0;">
+    <input type="search" id="place-search-input" placeholder="Start Searching..."/>
+    <input type="button" name="" id="" onclick="search()">
+    <div class="container" style="display: flex; flex-direction: row;">
+      <div id="map" style="width: 70%;margin-top: 2%;margin-left: 2%;margin-right: 2%; height: 650px; border: 2px solid  black;">
+      </div>
+      <div class="serach" style="border: 2px solid yellow;width: 24%;margin-top: 2%;" >
+        <h2 style=" padding-left: 28%; width: 100%;">Slot Booking </h2><hr>
+        <input type="text " style=" margin-left: 30%; "><i class="fa fa-search" aria-hidden="true"></i>
+      </div>
+    </div>
+    
+  </body>
+</html>

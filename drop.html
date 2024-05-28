@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown List with jQuery</title>
+    <!-- Include jQuery from a CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        /* Some basic styling for better appearance */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+
+        select {
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Select State</h2>
+
+    <!-- Dropdown list with id "statedropdown" -->
+    <select id="statedropdown">
+        <option>State</option>
+        <option value="Gujarat">Gujarat</option>
+        <option value="Rajsthan">Rajsthan</option>
+
+
+    </select>
+
+    <!-- jQuery code to handle dropdown change event -->
+    <script>
+        $(document).ready(function () {
+            // Attach change event to the dropdown list with id "statedropdown"
+            $('#statedropdown').change(function () {
+                // Get the selected value
+                var selectedstate = $(this).val();
+
+                // Display an alert with the selected value (you can replace this with your desired functionality)
+                // alert('You selected: ' + selectedstate);
+
+                if (selectedstate == 'Gujarat') {
+                    // $("#City").remove();
+                    $('#statedropdown').after("<select id='City'> <option >City</option><option value='ahemdabad'>ahemdabads</option><option value='surat'>surat</option> <option value='gandhinagar'>gandhinagar</option> </select>");
+                }
+                $('#City').change(function () {
+                    var selectedcity = $(this).val();
+                    alert('You selected: ' + selectedcity);
+
+
+                });
+
+                if (selectedstate == 'Rajsthan') {
+                    $("#City").remove();
+                    $('#statedropdown').after("<select id='City'> <option >City</option><option value='Jaipur'>Jaipur</option><option value='udaipur'>udaipur</option> <option value='Jesalmer'>Jesalmer</option> </select>");
+                }
+                $('#City').change(function () {
+                    var selectedcity = $(this).val();
+                    alert('You selected: ' + selectedcity);
+
+                });
+
+
+            });
+
+
+        });
+    </script>
+
+</body>
+
+</html>
